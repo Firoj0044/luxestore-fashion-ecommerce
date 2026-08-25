@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-accent: #FF3E00;
+    --color-bg-dark: #080808;
+    --color-surface-dark: #121212;
+    --color-surface-elevated: #1a1a1a;
+    --color-border-subtle: rgba(255, 255, 255, 0.1);
+    --color-border-strong: rgba(255, 255, 255, 0.25);
+    --color-text-primary: #FFFFFF;
+    --color-text-muted: rgba(255, 255, 255, 0.6);
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #080808;
+    color: #FFFFFF;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, .font-display, .font-serif {
+    font-family: 'Syne', 'Plus Jakarta Sans', sans-serif;
+    letter-spacing: -0.03em;
+  }
+}
+
+.font-mono-tech {
+  font-family: 'Space Grotesk', monospace;
+}
+
+/* Bold Typography Outline Stroke Text */
+.stroke-text {
+  color: transparent !important;
+  -webkit-text-stroke: 1.5px white;
+}
+
+.stroke-text-orange {
+  color: transparent !important;
+  -webkit-text-stroke: 1.5px #FF3E00;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: 200%;
+  animation: marquee 20s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Brutalist High-Contrast Input Fields */
+.input-minimal {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background-color: #121212;
+  color: #FFFFFF;
+  padding: 12px 14px;
+  border-radius: 0;
+  width: 100%;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.input-minimal:focus {
+  outline: none;
+  border-color: #FF3E00;
+  background-color: #181818;
+  box-shadow: 0 0 0 1px #FF3E00;
+}
+
+.input-minimal::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #080808;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FF3E00;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
